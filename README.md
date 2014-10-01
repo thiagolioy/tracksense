@@ -20,9 +20,6 @@ Before:
         [_ad4PTracker login:customer];
         [_adjustTracker login:customer];
     } failure:^(NSString *errorMsg) {
-        [[Trigger sharedInstance] loginFailed:errorMsg];
-        [_loginButton reset];
-        [AlertUtil showAlertWithMessage:errorMsg];
     }];
 }
 
@@ -40,9 +37,6 @@ After:
         [self successOnLogin:customer];
         [[Trigger sharedInstance] login:customer];
     } failure:^(NSString *errorMsg) {
-        [[Trigger sharedInstance] loginFailed:errorMsg];
-        [_loginButton reset];
-        [AlertUtil showAlertWithMessage:errorMsg];
     }];
 }
 
